@@ -9,11 +9,13 @@ import UpdateProductPage from "./pages/UpdateProductPage";
 import CartPage from "./pages/CartPage";
 import OrderListPage from "./pages/OrderListPage";
 import OrderedListPage from "./pages/OrderedListPage";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/product-list" element={<ProductListPage />} />
