@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
+import ProductListPage from "./pages/ProductListPage";
+import StorePage from "./pages/StorePage";
+import AddProductPage from "./pages/AddProductPage";
+import ProductPage from "./pages/ProductPage";
+import UpdateProductPage from "./pages/UpdateProductPage";
+import CartPage from "./pages/CartPage";
+import OrderListPage from "./pages/OrderListPage";
+import OrderedListPage from "./pages/OrderedListPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/product-list" element={<ProductListPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/product/:id/update" element={<UpdateProductPage />} />
+        <Route path="/store/:id" element={<StorePage />} />
+        <Route path="/store/add" element={<AddProductPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/order" element={<OrderListPage />} />
+        <Route path="/ordered" element={<OrderedListPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
